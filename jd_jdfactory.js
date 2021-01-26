@@ -536,8 +536,8 @@ function jdfactory_getProductList(flag = false) {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
+            $.canMakeList = [];
             if (data.data.bizCode === 0) {
-              $.canMakeList = [];
               $.canMakeList = data.data.result.canMakeList;//当前可选商品列表 sellOut:1为已抢光，0为目前可选择
               if ($.canMakeList && $.canMakeList.length > 0) {
                 $.canMakeList.sort(sortCouponCount);
